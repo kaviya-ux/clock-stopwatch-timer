@@ -1,4 +1,5 @@
 # Clock / Stopwatch / Timer
+<img width="506" height="328" alt="image" src="https://github.com/user-attachments/assets/002e68b2-85a6-4720-a174-ce756d98c2d4" />
 
 A small 3-in-1 time app built with HTML, CSS, and vanilla JavaScript — a live clock, a stopwatch with laps, and a countdown timer, switchable with tabs.
 
