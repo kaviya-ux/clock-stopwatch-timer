@@ -1,0 +1,176 @@
+/* keeping the same dark theme i used in my calculator project, kinda became my go to now */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1b1d23;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.app {
+  width: 360px;
+  background: #24262e;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* tabs at the top to switch between clock / stopwatch / timer */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  background: #14151a;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #8b8d98;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab-btn.active {
+  background: #4d8dff;
+  color: #fff;
+}
+
+/* only the active tab content shows */
+.tab-content {
+  display: none;
+  text-align: center;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.time-display {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.date-display {
+  color: #8b8d98;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #fff;
+  transition: opacity 0.15s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.start {
+  background: #4d8dff;
+}
+
+.start.running {
+  background: #ff9f43;
+}
+
+.lap {
+  background: #4a4d59;
+}
+
+.reset {
+  background: #e0555f;
+}
+
+/* stopwatch lap list */
+.laps {
+  list-style: none;
+  margin-top: 16px;
+  max-height: 130px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.laps li {
+  color: #c3c4cc;
+  font-size: 0.85rem;
+  padding: 6px 4px;
+  border-bottom: 1px solid #2f313b;
+}
+
+/* timer input boxes */
+.timer-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 18px 0 4px;
+}
+
+.timer-inputs input {
+  width: 54px;
+  padding: 8px;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  background: #14151a;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* hide the little up/down arrows on the number inputs, they look messy */
+.timer-inputs input::-webkit-outer-spin-button,
+.timer-inputs input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.timer-inputs span {
+  color: #8b8d98;
+  font-size: 1.2rem;
+}
+
+.timer-message {
+  margin-top: 12px;
+  color: #ff9f43;
+  font-size: 0.9rem;
+  min-height: 20px;
+}
+
+@media (max-width: 400px) {
+  .app {
+    width: 92vw;
+  }
+}
