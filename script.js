@@ -1,4 +1,17 @@
+// ---------- tab switching ----------
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
 
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // turn everything off first, then turn on the one that was clicked
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+
+    button.classList.add('active');
+    document.getElementById(button.dataset.tab).classList.add('active');
+  });
+});
 
 // just a helper i use in a few places to always show 2 digits, like 05 instead of 5
 function padTime(num) {
